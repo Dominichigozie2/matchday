@@ -1,21 +1,21 @@
 .page {
-  padding-top: calc(var(--nav-h) + 36px);
+  padding-top: calc(var(--nav-h) + 32px);
   padding-bottom: var(--space-10);
 }
 
 .header {
   max-width: 700px;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .title {
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(32px, 5vw, 60px);
   margin-top: 12px;
 }
 
 .sub {
   color: var(--ink-2);
-  font-size: 17px;
+  font-size: clamp(15px, 2vw, 17px);
   margin-top: 12px;
 }
 
@@ -29,7 +29,8 @@
 .builder {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
+  min-width: 0;
 }
 
 .card {
@@ -40,6 +41,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
 }
 
 .stepTitle {
@@ -56,21 +58,22 @@
   border-radius: 10px;
   background: var(--inverse);
   color: var(--volt);
+  flex-shrink: 0;
 }
 
 .stepTitle h2 {
-  font-size: 23px;
+  font-size: clamp(19px, 2.5vw, 23px);
 }
 
 .stepTitle p {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--muted);
   margin-top: 3px;
 }
 
 .catGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 10px;
 }
 
@@ -84,15 +87,16 @@
   border: 1.5px solid var(--line);
   text-align: left;
   transition: all 0.2s;
+  min-width: 0;
 }
 
 .catCard strong {
   display: block;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .catCard span {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--muted);
 }
 
@@ -146,8 +150,8 @@
 
 .segBtn {
   flex: 1;
-  height: 44px;
-  padding-inline: 12px;
+  min-height: 44px;
+  padding: 8px 12px;
   border-radius: 12px;
   background: var(--bg);
   border: 1.5px solid var(--line);
@@ -157,6 +161,7 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
+  text-align: center;
 }
 
 .segBtn:disabled {
@@ -187,7 +192,7 @@
   border-radius: 12px;
   border: 1.5px solid var(--line-strong);
   background: var(--surface);
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -200,7 +205,7 @@
 .quickUser {
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 99px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -213,6 +218,7 @@
   padding: 10px 12px;
   border-radius: 12px;
   background: var(--primary-soft);
+  flex-wrap: wrap;
 }
 
 .resolvedPreview strong {
@@ -228,7 +234,7 @@
 /* Settings controls */
 .settingsList {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .settingItem {
@@ -253,8 +259,8 @@
 }
 
 .optBtn {
-  height: 38px;
-  padding-inline: 14px;
+  min-height: 38px;
+  padding: 6px 14px;
   border-radius: 10px;
   background: var(--surface);
   border: 1.5px solid var(--line);
@@ -279,8 +285,8 @@
 }
 
 .stepper button {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 8px;
   background: var(--surface-2);
   font-weight: 800;
@@ -291,7 +297,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
+  padding: 9px 14px;
   border-radius: 99px;
   background: var(--surface);
   border: 1.5px solid var(--line);
@@ -304,6 +310,7 @@
   height: 12px;
   border-radius: 50%;
   background: var(--subtle);
+  flex-shrink: 0;
 }
 
 .toggleBtnOn {
@@ -358,11 +365,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding: 12px 14px;
   border-radius: 12px;
   background: var(--bg);
   border: 1.5px solid var(--line);
   text-align: left;
+  flex-wrap: wrap;
 }
 
 .venuePickItem strong {
@@ -399,12 +408,17 @@
 
 .potCallout {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   padding: 14px 16px;
   border-radius: 14px;
   background: var(--volt-soft);
   border: 1.5px solid var(--volt);
+}
+
+.potCallout svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .potCallout strong {
@@ -438,6 +452,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .summaryId {
@@ -504,6 +520,7 @@
 
 .summaryRules strong {
   color: var(--inverse-ink);
+  text-align: right;
 }
 
 .summaryLogistics {
@@ -519,14 +536,20 @@
   gap: 8px;
 }
 
+.summaryLogistics svg {
+  flex-shrink: 0;
+}
+
 .summaryStake {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding: 14px 16px;
   border-radius: 14px;
   background: rgba(201, 242, 107, 0.12);
   border: 1px solid var(--volt);
+  flex-wrap: wrap;
 }
 
 .summaryStake span {
@@ -550,11 +573,27 @@
 }
 
 @media (max-width: 640px) {
+  .page {
+    padding-top: calc(var(--nav-h) + 20px);
+  }
   .twoCol,
   .venueModeGrid {
     grid-template-columns: 1fr;
   }
-  .card {
-    padding: 20px;
+  .segRow {
+    flex-direction: column;
+  }
+  .catGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card,
+  .summaryCard {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .catGrid {
+    grid-template-columns: 1fr;
   }
 }

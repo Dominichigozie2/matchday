@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-width: 0;
 }
 
 .listHead h2 {
@@ -39,6 +40,7 @@
   border: 1.5px solid transparent;
   text-align: left;
   transition: all 0.2s;
+  min-width: 0;
 }
 
 .threadActive {
@@ -94,6 +96,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 0;
 }
 
 .roomHead {
@@ -102,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -110,6 +113,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
 }
 
 .roomTitleLine {
@@ -120,16 +124,17 @@
 }
 
 .roomTitleLine h3 {
-  font-size: 19px;
+  font-size: clamp(16.5px, 2.5vw, 19px);
 }
 
 .lifecycle {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 3px;
+  flex-wrap: wrap;
 }
 
 .lifecycle strong {
@@ -150,9 +155,10 @@
   border-radius: 99px;
   background: var(--bg);
   border: 1px solid var(--line);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .quickAction:hover {
@@ -167,9 +173,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 .ctxItem {
@@ -181,11 +187,12 @@
 
 .ctxItem svg {
   color: var(--primary);
+  flex-shrink: 0;
 }
 
 .messages {
   flex: 1;
-  padding: 22px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -199,12 +206,13 @@
 }
 
 .sysPill {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 99px;
   background: var(--surface-2);
   color: var(--ink-2);
+  text-align: center;
 }
 
 .stakeCard {
@@ -216,11 +224,17 @@
   border-radius: 16px;
   background: var(--inverse);
   color: var(--inverse-ink);
+  flex-wrap: wrap;
 }
 
 .stakeCard svg {
   color: var(--volt);
   flex-shrink: 0;
+}
+
+.stakeCard > div {
+  flex: 1;
+  min-width: 180px;
 }
 
 .stakeCard strong {
@@ -246,8 +260,8 @@
 }
 
 .bubble {
-  max-width: min(460px, 82%);
-  padding: 12px 16px;
+  max-width: min(460px, 86%);
+  padding: 12px 15px;
   border-radius: 18px;
   font-size: 14.5px;
   line-height: 1.45;
@@ -302,21 +316,22 @@
 }
 
 .composer {
-  padding: 16px 20px;
+  padding: 14px 16px;
   border-top: 1px solid var(--line);
   display: flex;
-  gap: 10px;
+  gap: 8px;
   background: var(--surface);
 }
 
 .composer input {
   flex: 1;
+  min-width: 0;
   height: 46px;
   padding-inline: 16px;
   border-radius: 99px;
   border: 1.5px solid var(--line-strong);
   background: var(--bg);
-  font-size: 14.5px;
+  font-size: 15px;
   outline: none;
 }
 
@@ -325,19 +340,20 @@
   align-items: center;
   gap: 8px;
   height: 46px;
-  padding-inline: 20px;
+  padding-inline: 18px;
   border-radius: 99px;
   background: var(--inverse);
   color: var(--inverse-ink);
   font-weight: 700;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .scoreGrid {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 16px;
+  gap: 12px;
   padding: 12px 0;
 }
 
@@ -346,14 +362,15 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  text-align: center;
 }
 
 .scoreInput {
-  width: 84px;
-  height: 60px;
+  width: 78px;
+  height: 58px;
   text-align: center;
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   border-radius: 14px;
   border: 2px solid var(--line-strong);
@@ -369,5 +386,33 @@
 @media (max-width: 900px) {
   .wrap {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .threadList {
+    padding: 14px;
+  }
+  .items {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .items::-webkit-scrollbar {
+    display: none;
+  }
+  .threadBtn {
+    flex: 0 0 245px;
+  }
+  .roomHead,
+  .contextStrip,
+  .messages {
+    padding-inline: 16px;
+  }
+  .roomActions {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
   }
 }

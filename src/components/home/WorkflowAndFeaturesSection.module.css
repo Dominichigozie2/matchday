@@ -74,6 +74,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0;
 }
 
 .teamPanel {
@@ -88,13 +89,13 @@
 }
 
 .panelTop h3 {
-  font-size: clamp(26px, 2.8vw, 34px);
+  font-size: clamp(24px, 2.8vw, 34px);
   margin-top: 14px;
 }
 
 .panelTop p {
   margin-top: 10px;
-  font-size: 15.5px;
+  font-size: 15px;
   color: var(--ink-2);
 }
 
@@ -144,20 +145,23 @@
   border-radius: 12px;
   background: var(--surface);
   border: 1px solid var(--line-strong);
+  min-width: 0;
 }
 
 .inviteBar code {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--ink);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .copyBtn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 8px 14px;
   border-radius: 9px;
@@ -273,7 +277,7 @@
 .potBreakdown strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 18px;
   margin-top: 2px;
 }
 
@@ -290,19 +294,20 @@
 
 .escrowRules li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }
 
 .escrowRules svg {
   color: var(--volt);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* Media card bottom */
 .panelMedia {
   position: relative;
-  height: 230px;
+  min-height: 230px;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-top: auto;
@@ -316,11 +321,11 @@
 .mediaOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 25%, rgba(13, 27, 30, 0.85) 100%);
+  background: linear-gradient(180deg, transparent 20%, rgba(13, 27, 30, 0.88) 100%);
   display: flex;
   align-items: flex-end;
   gap: 10px;
-  padding: 18px;
+  padding: 16px;
   flex-wrap: wrap;
 }
 
@@ -333,18 +338,38 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   .stepsGrid {
     grid-template-columns: 1fr;
   }
+  .stepCard {
+    padding: 20px;
+  }
   .teamPanel,
   .stakePanel {
-    padding: 22px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+  }
+  .inviteWidget,
+  .stakeCalc {
+    padding: 14px;
+  }
+  .inviteBar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+  .copyBtn {
+    width: 100%;
+    padding: 10px;
   }
   .stakeButtons {
     grid-template-columns: repeat(2, 1fr);
   }
   .potBreakdown {
     grid-template-columns: 1fr;
+  }
+  .mediaOverlay > * {
+    flex: 1 1 100%;
   }
 }

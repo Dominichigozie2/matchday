@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
@@ -28,6 +28,7 @@
   background: var(--surface);
   box-shadow: inset 0 0 0 1px var(--line);
   transition: all 0.2s var(--ease-out);
+  white-space: nowrap;
 }
 
 .pill:hover {
@@ -85,15 +86,16 @@
 /* Horizontal showroom slider */
 .slider {
   display: flex;
-  gap: 22px;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-inline: max(24px, calc((100vw - var(--container)) / 2 + 24px));
+  padding-inline: max(16px, calc((100vw - var(--container)) / 2 + 24px));
   padding-bottom: 24px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card {
-  flex: 0 0 348px;
+  flex: 0 0 min(348px, calc(100vw - 44px));
   scroll-snap-align: start;
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -118,7 +120,7 @@
 
 .media {
   position: relative;
-  height: 268px;
+  height: 256px;
   overflow: hidden;
   background: var(--inverse);
 }
@@ -140,8 +142,8 @@
 
 .cardTop {
   position: absolute;
-  top: 16px;
-  inset-inline: 16px;
+  top: 14px;
+  inset-inline: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -162,6 +164,8 @@
 .modeBadges {
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .modeChip {
@@ -170,9 +174,9 @@
   gap: 5px;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.88);
   color: var(--ink);
   backdrop-filter: blur(8px);
 }
@@ -198,13 +202,13 @@
 }
 
 .cardTitle {
-  font-size: 26px;
+  font-size: 25px;
   color: #fff;
 }
 
 .cardTagline {
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
   margin-top: 4px;
 }
 
@@ -285,6 +289,7 @@
   background: var(--primary-soft);
   color: var(--primary);
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 .createBtn:hover {
@@ -294,14 +299,14 @@
 
 /* Inspector panel */
 .inspector {
-  margin-top: 16px;
+  margin-top: 12px;
   padding: 28px;
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--line);
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  gap: 32px;
+  gap: 28px;
   align-items: center;
 }
 
@@ -312,8 +317,8 @@
 }
 
 .inspectorIcon {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 16px;
   display: grid;
   place-items: center;
@@ -323,14 +328,14 @@
 }
 
 .inspectorTitle {
-  font-size: 26px;
+  font-size: clamp(21px, 3vw, 26px);
   margin-top: 6px;
 }
 
 .inspectorDesc {
   color: var(--ink-2);
-  margin-top: 14px;
-  font-size: 15.5px;
+  margin-top: 12px;
+  font-size: 15px;
 }
 
 .venueRow {
@@ -338,7 +343,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .venueLabel {
@@ -360,13 +365,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 22px;
+  margin-top: 20px;
 }
 
 .settingsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 10px;
 }
 
 .settingCard {
@@ -378,7 +383,7 @@
 
 .settingName {
   display: block;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -451,10 +456,31 @@
 }
 
 @media (max-width: 640px) {
-  .card {
-    flex-basis: 84vw;
+  .toolbar {
+    gap: 12px;
+  }
+  .filterPills {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filterPills::-webkit-scrollbar {
+    display: none;
+  }
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .progressTrack {
+    flex: 1;
   }
   .inspector {
-    padding: 20px;
+    padding: 18px;
+    gap: 20px;
+  }
+  .inspectorCtas > * {
+    flex: 1 1 100%;
   }
 }

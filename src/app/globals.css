@@ -241,14 +241,14 @@ ol {
 }
 
 .section-title {
-  font-size: clamp(32px, 4.4vw, 56px);
+  font-size: clamp(28px, 4.4vw, 56px);
   max-width: 16ch;
   margin-top: 14px;
 }
 
 .section-sub {
   color: var(--muted);
-  font-size: 18px;
+  font-size: clamp(15.5px, 1.8vw, 18px);
   max-width: 46ch;
 }
 
@@ -305,10 +305,22 @@ ol {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --nav-h: 66px;
+  }
   .section {
-    padding-block: var(--space-8);
+    padding-block: 56px;
+  }
+  .section-head {
+    gap: 16px;
+    margin-bottom: 28px;
   }
   .container {
-    padding-inline: 18px;
+    padding-inline: 16px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px;
   }
 }

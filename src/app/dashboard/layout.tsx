@@ -20,10 +20,10 @@ import Button from "@/components/ui/Button";
 import styles from "./dashboard.module.css";
 
 const navItems = [
-  { href: "/dashboard", label: "Overview & Requests", icon: LayoutDashboard },
-  { href: "/dashboard/team", label: "Player Log & Invite Links", icon: UsersRound, badge: "Group" },
-  { href: "/dashboard/chat", label: "Merged Match Chat", icon: MessagesSquare, badge: "3 active" },
-  { href: "/dashboard/wallet", label: "Stakes & Escrow", icon: Wallet },
+  { href: "/dashboard", label: "Overview & Requests", short: "Overview", icon: LayoutDashboard },
+  { href: "/dashboard/team", label: "Player Log & Invite Links", short: "Squad Log", icon: UsersRound, badge: "Group" },
+  { href: "/dashboard/chat", label: "Merged Match Chat", short: "Chat", icon: MessagesSquare, badge: "3" },
+  { href: "/dashboard/wallet", label: "Stakes & Escrow", short: "Wallet", icon: Wallet },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -100,18 +100,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className={styles.mobileBrand}>
             <Logo />
           </div>
-          <div className={styles.topLinks}>
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`${styles.topPill} ${pathname === item.href ? styles.topPillActive : ""}`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
           <div className={styles.topRight}>
+            <code className={styles.idChipMobile}>{me.id}</code>
             <span className={styles.areaBadge}>{me.area}, Lagos</span>
             <Button href="/create" variant="dark" size="sm" icon={<Plus />}>
               New request
@@ -121,6 +111,33 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         <div className={styles.content}>{children}</div>
       </div>
+
+      {/* Fixed Bottom Tab Bar on Mobile & Tablet */}
+      <nav className={styles.bottomNav} aria-label="Mobile dashboard navigation">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const active = pathname === item.href;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${styles.bottomTab} ${active ? styles.bottomTabActive : ""}`}
+            >
+              <span className={styles.bottomIconWrap}>
+                <Icon size={20} />
+                {item.badge && <span className={styles.bottomDot} />}
+              </span>
+              <span>{item.short}</span>
+            </Link>
+          );
+        })}
+        <Link href="/explore" className={styles.bottomTab}>
+          <span className={styles.bottomIconWrap}>
+            <Compass size={20} />
+          </span>
+          <span>Explore</span>
+        </Link>
+      </nav>
     </div>
   );
 }

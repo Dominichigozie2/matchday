@@ -322,4 +322,14 @@
   .twoCol {
     grid-template-columns: 1fr;
   }
+  .vsBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .segRow {
+    flex-direction: column;
+  }
+  .segBtn {
+    width: 100%;
+  }
 }

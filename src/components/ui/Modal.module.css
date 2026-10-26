@@ -78,13 +78,17 @@
   }
   .panel {
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    max-height: 92vh;
+    max-height: 90dvh;
   }
   .head,
   .body {
-    padding-inline: 20px;
+    padding-inline: 18px;
   }
   .foot {
-    padding-inline: 20px;
+    padding: 14px 18px max(18px, env(safe-area-inset-bottom));
+    flex-direction: column-reverse;
+  }
+  .foot > * {
+    width: 100%;
   }
 }

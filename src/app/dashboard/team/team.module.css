@@ -13,12 +13,12 @@
 }
 
 .header h1 {
-  font-size: 32px;
+  font-size: clamp(26px, 4vw, 32px);
   margin-top: 6px;
 }
 
 .header p {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--muted);
   margin-top: 4px;
   max-width: 62ch;
@@ -47,6 +47,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .squadCap {
@@ -55,8 +56,12 @@
   color: var(--volt);
 }
 
+.inviteLeft {
+  min-width: 0;
+}
+
 .inviteLeft h2 {
-  font-size: 26px;
+  font-size: clamp(22px, 3vw, 26px);
   color: var(--inverse-ink);
 }
 
@@ -76,6 +81,7 @@
   border-radius: 14px;
   background: var(--inverse-2);
   border: 1px solid var(--inverse-line);
+  min-width: 0;
 }
 
 .linkIcon {
@@ -85,7 +91,8 @@
 
 .linkBox code {
   flex: 1;
-  font-size: 13.5px;
+  min-width: 0;
+  font-size: 13px;
   font-weight: 700;
   color: var(--inverse-ink);
   overflow: hidden;
@@ -96,6 +103,7 @@
 .copyBtn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 9px 16px;
   border-radius: 10px;
@@ -123,11 +131,15 @@
 
 .switchLabel {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 13px;
   color: var(--inverse-muted);
   cursor: pointer;
+}
+
+.switchLabel input {
+  margin-top: 3px;
 }
 
 .qrCard {
@@ -174,11 +186,12 @@
 .rosterSection {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 22px;
   border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 0;
 }
 
 .secHead {
@@ -190,7 +203,7 @@
 }
 
 .secHead h2 {
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .secHead p {
@@ -201,7 +214,7 @@
 
 .pendingGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 14px;
 }
 
@@ -265,8 +278,9 @@
 .approveBtn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 7px 12px;
+  padding: 8px 13px;
   border-radius: 99px;
   font-size: 12.5px;
   font-weight: 700;
@@ -289,6 +303,8 @@
   background: var(--bg);
   padding: 4px;
   border-radius: 10px;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .sportTab {
@@ -297,6 +313,7 @@
   font-size: 12.5px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .sportTabOn {
@@ -397,15 +414,93 @@
   border-radius: 10px;
   border: 1.5px solid var(--line-strong);
   background: var(--bg);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 @media (max-width: 900px) {
   .inviteHero {
     grid-template-columns: 1fr;
+    padding: 20px;
   }
-  .pendingGrid {
+}
+
+/* Transform table into stacked player cards on mobile */
+@media (max-width: 680px) {
+  .pendingSection,
+  .rosterSection {
+    padding: 16px;
+  }
+  .headerActions {
+    width: 100%;
+  }
+  .headerActions > * {
+    flex: 1 1 auto;
+  }
+  .linkBox {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .linkBox code {
+    flex-basis: calc(100% - 36px);
+  }
+  .copyBtn {
+    flex: 1;
+    height: 40px;
+  }
+  .pendingBtns {
+    width: 100%;
+  }
+  .rejectBtn,
+  .approveBtn {
+    flex: 1;
+    height: 40px;
+  }
+  .table thead {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 12px;
+    align-items: center;
+  }
+  .table td {
+    padding: 0;
+    border: 0;
+  }
+  .table td:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .table td:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .table td:nth-child(3),
+  .table td:nth-child(4),
+  .table td:nth-child(5),
+  .table td:nth-child(6) {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6px;
+    border-top: 1px dashed var(--line);
+  }
+  .mTwo {
     grid-template-columns: 1fr;
   }
 }

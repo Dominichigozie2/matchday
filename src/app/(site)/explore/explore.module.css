@@ -26,6 +26,7 @@
   background: var(--surface);
   color: var(--ink-2);
   border: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .dirTabOn {
@@ -36,7 +37,7 @@
 
 .dirGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 18px;
 }
 
@@ -48,17 +49,19 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-width: 0;
 }
 
 .userTop {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .userInfo {
   flex: 1;
-  min-width: 0;
+  min-width: 140px;
 }
 
 .nameRow {
@@ -73,12 +76,14 @@
 
 .verified {
   color: var(--primary);
+  flex-shrink: 0;
 }
 
 .metaRow {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
   font-size: 13px;
   color: var(--muted);
   margin-top: 2px;
@@ -129,4 +134,15 @@
   font-size: 12px;
   font-weight: 700;
   color: var(--ink-2);
+}
+
+@media (max-width: 560px) {
+  .dirFilters {
+    width: 100%;
+  }
+  .dirTab {
+    flex: 1 1 auto;
+    text-align: center;
+    padding-inline: 12px;
+  }
 }
