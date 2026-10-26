@@ -1,0 +1,215 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-top: 6px;
+}
+
+.header p {
+  font-size: 14.5px;
+  color: var(--muted);
+  margin-top: 4px;
+  max-width: 60ch;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+}
+
+.mainBalance {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mainBalance strong {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--volt);
+}
+
+.mainBalance small {
+  color: var(--inverse-muted);
+  font-size: 12.5px;
+}
+
+.statCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statCard strong {
+  font-family: var(--font-display);
+  font-size: 32px;
+}
+
+.statCard small {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.balTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.panelHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.panelHead h2 {
+  font-size: 21px;
+}
+
+.panelHead p {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.escrowGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.escrowCard {
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+
+.escrowTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.escrowMeta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.depositBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.depDone {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--primary);
+}
+
+.depWait {
+  color: #a86b00;
+}
+
+.ledger {
+  display: grid;
+  gap: 10px;
+}
+
+.ledgerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.ledgerRow strong {
+  display: block;
+  font-size: 14.5px;
+}
+
+.ledgerRow span {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.ledgerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amtIn {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.amtLock {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .cards,
+  .escrowGrid {
+    grid-template-columns: 1fr;
+  }
+}

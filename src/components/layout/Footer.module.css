@@ -1,0 +1,89 @@
+.footer {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  padding-top: var(--space-9);
+  overflow: hidden;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr;
+  gap: var(--space-8);
+}
+
+.brand p {
+  color: var(--inverse-muted);
+  max-width: 36ch;
+  margin-top: 20px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.cols h4 {
+  font-size: 13px;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--volt);
+  margin-bottom: 18px;
+}
+
+.cols li + li {
+  margin-top: 10px;
+}
+
+.cols a {
+  color: var(--inverse-muted);
+  transition: color 0.2s;
+}
+.cols a:hover {
+  color: var(--inverse-ink);
+}
+
+.giant {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(80px, 19vw, 280px);
+  letter-spacing: -0.07em;
+  line-height: 0.8;
+  margin-top: var(--space-8);
+  background: linear-gradient(180deg, var(--inverse-2), transparent 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 28px;
+  border-top: 1px solid var(--inverse-line);
+  font-size: 14px;
+  color: var(--inverse-muted);
+}
+
+.legal {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}

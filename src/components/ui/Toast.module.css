@@ -1,0 +1,76 @@
+.stack {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(380px, calc(100vw - 40px));
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  box-shadow: var(--shadow-lg);
+  animation: in 0.5s var(--ease-spring);
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.success .icon {
+  background: var(--volt);
+  color: var(--volt-ink);
+}
+.info .icon {
+  background: var(--info);
+  color: #fff;
+}
+.warning .icon {
+  background: var(--warning);
+  color: #fff;
+}
+
+.text {
+  flex: 1;
+  padding-top: 4px;
+}
+.text strong {
+  font-size: 15px;
+  display: block;
+}
+.text p {
+  color: var(--inverse-muted);
+  font-size: 14px;
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+.close {
+  color: var(--inverse-muted);
+  padding: 4px;
+  border-radius: 8px;
+}
+.close:hover {
+  color: var(--inverse-ink);
+  background: var(--inverse-2);
+}

@@ -1,0 +1,139 @@
+.btn {
+  --h: 48px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: var(--h);
+  padding-inline: 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition:
+    transform 0.25s var(--ease-out),
+    background-color 0.2s,
+    box-shadow 0.25s var(--ease-out),
+    border-color 0.2s,
+    color 0.2s;
+  isolation: isolate;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sm {
+  --h: 38px;
+  padding-inline: 16px;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.lg {
+  --h: 58px;
+  padding-inline: 30px;
+  font-size: 16px;
+}
+
+.block {
+  width: 100%;
+}
+
+.iconOnly {
+  width: var(--h);
+  padding: 0;
+}
+
+.primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+  box-shadow: 0 8px 20px -10px var(--primary);
+}
+.primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 14px 28px -12px var(--primary);
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 8px 20px -10px var(--accent);
+}
+.accent:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 14px 28px -12px var(--accent);
+}
+
+.dark {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+}
+.dark:hover {
+  background: var(--inverse-2);
+  box-shadow: var(--shadow-md);
+}
+
+.volt {
+  background: var(--volt);
+  color: var(--volt-ink);
+}
+.volt:hover {
+  box-shadow: 0 14px 28px -14px rgba(120, 160, 20, 0.8);
+}
+
+.outline {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.outline:hover {
+  border-color: var(--ink);
+}
+
+.soft {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.soft:hover {
+  background: var(--surface-3);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ink-2);
+}
+.ghost:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+  transform: none;
+}

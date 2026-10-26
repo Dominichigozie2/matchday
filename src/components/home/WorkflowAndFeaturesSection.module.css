@@ -1,0 +1,350 @@
+.howSection {
+  background: var(--bg);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stepCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--line-strong);
+}
+
+.stepCard h3 {
+  font-size: 21px;
+}
+
+.stepCard p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+/* Bento dual showcase */
+.dualSection {
+  padding-top: 20px;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.teamPanel,
+.stakePanel {
+  border-radius: var(--radius-xl);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.teamPanel {
+  background: var(--surface);
+  box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--line);
+}
+
+.stakePanel {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  box-shadow: var(--shadow-md);
+}
+
+.panelTop h3 {
+  font-size: clamp(26px, 2.8vw, 34px);
+  margin-top: 14px;
+}
+
+.panelTop p {
+  margin-top: 10px;
+  font-size: 15.5px;
+  color: var(--ink-2);
+}
+
+.stakePanel .panelTop p {
+  color: var(--inverse-muted);
+}
+
+/* Invite widget */
+.inviteWidget {
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+}
+
+.inviteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inviteLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.inviteStatus {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.inviteBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+}
+
+.inviteBar code {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rosterMini {
+  display: grid;
+  gap: 8px;
+}
+
+.rosterRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.jersey {
+  font-family: var(--font-display);
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.roleTag {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.okPill {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+/* Stake calculator */
+.stakeCalc {
+  background: var(--inverse-2);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--inverse-line);
+  display: grid;
+  gap: 14px;
+}
+
+.calcHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--inverse-muted);
+}
+
+.calcHeader strong {
+  color: var(--volt);
+  font-size: 16px;
+}
+
+.stakeButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.stakeOpt {
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--inverse-ink);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--inverse-line);
+}
+
+.stakeOptOn {
+  background: var(--volt);
+  color: var(--volt-ink);
+  border-color: var(--volt);
+}
+
+.potBreakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.potBreakdown span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  color: var(--inverse-muted);
+}
+
+.potBreakdown strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin-top: 2px;
+}
+
+.totalPot strong {
+  color: var(--volt);
+}
+
+.escrowRules {
+  display: grid;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--inverse-muted);
+}
+
+.escrowRules li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.escrowRules svg {
+  color: var(--volt);
+  flex-shrink: 0;
+}
+
+/* Media card bottom */
+.panelMedia {
+  position: relative;
+  height: 230px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: auto;
+  background: var(--inverse-2);
+}
+
+.panelMedia img {
+  object-fit: cover;
+}
+
+.mediaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 25%, rgba(13, 27, 30, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+  .teamPanel,
+  .stakePanel {
+    padding: 22px;
+  }
+  .stakeButtons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .potBreakdown {
+    grid-template-columns: 1fr;
+  }
+}

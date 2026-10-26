@@ -1,0 +1,345 @@
+.section {
+  position: relative;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+}
+
+.blockLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.rivalList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.rivalBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.rivalBtn strong {
+  display: block;
+  font-size: 13.5px;
+}
+
+.rivalBtn span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.rivalActive {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.modeTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.modeTab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+}
+
+.modeTab strong {
+  display: block;
+  font-size: 13px;
+}
+
+.modeTab span {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.modeTabOn {
+  border-color: var(--inverse);
+  background: var(--inverse);
+  color: var(--inverse-ink);
+}
+
+.modeTabOn span {
+  color: var(--inverse-muted);
+}
+
+.venueStack {
+  display: grid;
+  gap: 10px;
+}
+
+.venueCard {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.venueCardActive {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.venueTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.venueTitleLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.venueTitleLine strong {
+  font-size: 15px;
+}
+
+.venueSub {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.priceTag {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.distanceSplit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.fairScore {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--volt);
+  color: var(--volt-ink);
+  font-weight: 800;
+}
+
+/* Right map stage */
+.mapStage {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.mapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.coords {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.mapCanvas {
+  position: relative;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(201, 242, 107, 0.25), transparent 65%),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--bg);
+  background-size: auto, 36px 36px, 36px 36px, auto;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pinCard {
+  position: absolute;
+  background: var(--surface);
+  padding: 10px 14px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-md), inset 0 0 0 1px var(--line);
+  font-size: 12.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pinCard strong {
+  font-size: 14px;
+}
+
+.pinCard span {
+  color: var(--muted);
+}
+
+.pinMe {
+  left: 24px;
+  bottom: 24px;
+}
+
+.pinVenue {
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--primary);
+}
+
+.pinRival {
+  right: 24px;
+  top: 24px;
+}
+
+.pinTag,
+.pinTagMid,
+.pinTagRival {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pinTag {
+  color: var(--ink) !important;
+}
+.pinTagMid {
+  color: var(--primary) !important;
+}
+.pinTagRival {
+  color: var(--accent) !important;
+}
+
+.venueDetailBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.venueAmenities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--warning-soft);
+  color: #a86b00;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.amenity {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.splitHint {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.splitHint strong {
+  color: var(--ink);
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rivalList,
+  .modeTabs {
+    grid-template-columns: 1fr;
+  }
+}

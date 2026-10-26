@@ -1,0 +1,325 @@
+.vsBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.party {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.party strong {
+  display: block;
+  font-size: 15px;
+}
+
+.party span {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.vsBadge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 99px;
+  background: var(--inverse);
+  color: var(--volt);
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.ruleBox {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  display: grid;
+  gap: 10px;
+}
+
+.ruleHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sportBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.dateRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+
+.venueOptions {
+  display: grid;
+  gap: 8px;
+}
+
+.venueOpt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.venueOpt strong {
+  display: block;
+  font-size: 14px;
+}
+
+.venueOpt span {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.venueOptActive {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.select,
+.input {
+  width: 100%;
+  height: 44px;
+  padding-inline: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface);
+  font-size: 14.5px;
+  margin-top: 8px;
+}
+
+.stakeBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--volt-soft);
+  border: 1.5px solid var(--volt);
+  color: var(--volt-ink);
+}
+
+.stakeBanner strong {
+  display: block;
+  font-size: 15px;
+}
+
+.stakeBanner p {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-top: 2px;
+}
+
+.friendlyBanner {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  display: grid;
+  gap: 2px;
+  font-size: 13.5px;
+}
+
+.friendlyBanner span {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Direct Challenge Modal */
+.targetCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.targetInfo {
+  flex: 1;
+}
+
+.targetNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.targetNameRow h4 {
+  font-size: 18px;
+}
+
+.verified {
+  color: var(--primary);
+}
+
+.targetInfo p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.catGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.catBtnActive {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-color: var(--inverse);
+}
+
+.favDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--volt);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.segRow {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.segBtn {
+  flex: 1;
+  height: 44px;
+  padding-inline: 10px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.segActive {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.stakeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stakeSwitch {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.stakeSwitchOn {
+  background: var(--volt);
+  color: var(--volt-ink);
+}
+
+.stakePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stakePill {
+  font-size: 12.5px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+}
+
+.stakePillActive {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+@media (max-width: 560px) {
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}

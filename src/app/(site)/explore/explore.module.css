@@ -1,0 +1,132 @@
+.page {
+  min-height: 100vh;
+}
+
+.topSpacer {
+  height: var(--nav-h);
+}
+
+.directorySection {
+  background: var(--bg);
+}
+
+.dirFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.dirTab {
+  height: 38px;
+  padding-inline: 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+}
+
+.dirTabOn {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-color: var(--inverse);
+}
+
+.dirGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 18px;
+}
+
+.userCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.userTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nameRow h3 {
+  font-size: 18px;
+}
+
+.verified {
+  color: var(--primary);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.idCode {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg);
+  font-size: 12.5px;
+}
+
+.statsBar span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.statsBar strong {
+  font-size: 13.5px;
+}
+
+.sportTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sportTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+}

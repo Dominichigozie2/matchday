@@ -1,0 +1,560 @@
+.page {
+  padding-top: calc(var(--nav-h) + 36px);
+  padding-bottom: var(--space-10);
+}
+
+.header {
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 60px);
+  margin-top: 12px;
+}
+
+.sub {
+  color: var(--ink-2);
+  font-size: 17px;
+  margin-top: 12px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.builder {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stepTitle {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.stepBadge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: var(--inverse);
+  color: var(--volt);
+}
+
+.stepTitle h2 {
+  font-size: 23px;
+}
+
+.stepTitle p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 10px;
+}
+
+.catCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.catCard strong {
+  display: block;
+  font-size: 14px;
+}
+
+.catCard span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.catIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.catCardActive {
+  border-color: var(--tint, var(--primary));
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.catCardActive .catIcon {
+  background: var(--tint, var(--primary));
+  color: #fff;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.fieldHint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.segRow {
+  display: flex;
+  gap: 8px;
+}
+
+.segBtn {
+  flex: 1;
+  height: 44px;
+  padding-inline: 12px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.segBtn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.segBtnOn {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-color: var(--inverse);
+}
+
+.directBlock {
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+
+.input,
+.select {
+  width: 100%;
+  height: 46px;
+  padding-inline: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface);
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.quickPicks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quickUser {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.resolvedPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+}
+
+.resolvedPreview strong {
+  display: block;
+  font-size: 14px;
+}
+
+.resolvedPreview span {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+/* Settings controls */
+.settingsList {
+  display: grid;
+  gap: 16px;
+}
+
+.settingItem {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.settingHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.optRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.optBtn {
+  height: 38px;
+  padding-inline: 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.optBtnOn {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-color: var(--primary);
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.stepper button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.toggleThumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--subtle);
+}
+
+.toggleBtnOn {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.toggleBtnOn .toggleThumb {
+  background: var(--primary);
+}
+
+/* Venue picker */
+.venueModeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.vModeCard {
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vModeCard strong {
+  font-size: 14px;
+}
+
+.vModeCard span {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.vModeActive {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.venuePickerList {
+  display: grid;
+  gap: 8px;
+}
+
+.venuePickItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+}
+
+.venuePickItem strong {
+  display: block;
+  font-size: 14px;
+}
+
+.venuePickItem span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.venuePickOn {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.venueFee {
+  font-weight: 800;
+  color: var(--primary) !important;
+}
+
+/* Stake config */
+.stakeConfig {
+  display: grid;
+  gap: 12px;
+}
+
+.stakePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.potCallout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--volt-soft);
+  border: 1.5px solid var(--volt);
+}
+
+.potCallout strong {
+  display: block;
+  font-size: 15px;
+}
+
+.potCallout span {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+/* Sticky summary */
+.summaryCol {
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+
+.summaryCard {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summaryTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summaryId {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--inverse-muted);
+}
+
+.summarySport {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.summaryIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.summarySport h3 {
+  font-size: 24px;
+  color: var(--inverse-ink);
+}
+
+.summarySport span {
+  font-size: 13px;
+  color: var(--inverse-muted);
+}
+
+.summaryRules {
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--inverse-2);
+  border: 1px solid var(--inverse-line);
+}
+
+.sumLabel {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--volt);
+  margin-bottom: 10px;
+}
+
+.summaryRules ul {
+  display: grid;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.summaryRules li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--inverse-muted);
+}
+
+.summaryRules strong {
+  color: var(--inverse-ink);
+}
+
+.summaryLogistics {
+  display: grid;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--inverse-muted);
+}
+
+.summaryLogistics div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summaryStake {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(201, 242, 107, 0.12);
+  border: 1px solid var(--volt);
+}
+
+.summaryStake span {
+  font-size: 13px;
+  color: var(--inverse-muted);
+}
+
+.summaryStake strong {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--volt);
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .summaryCol {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .twoCol,
+  .venueModeGrid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 20px;
+  }
+}

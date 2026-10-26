@@ -1,0 +1,31 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.mark {
+  transition: transform 0.5s var(--ease-spring);
+}
+.logo:hover .mark {
+  transform: rotate(-12deg) scale(1.06);
+}
+
+.word {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.light {
+  color: var(--inverse-ink);
+}
+.light rect {
+  fill: var(--inverse-ink);
+}
