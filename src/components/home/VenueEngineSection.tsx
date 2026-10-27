@@ -5,6 +5,7 @@ import { Navigation, MapPin, LocateFixed, Star, CheckCircle2, Sparkles } from "l
 import { me, users } from "@/data/users";
 import { venues } from "@/data/venues";
 import { formatNaira } from "@/data/requests";
+import { useUserLocation } from "@/lib/location";
 import Avatar from "@/components/ui/Avatar";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
@@ -22,6 +23,7 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number) {
 }
 
 export default function VenueEngineSection() {
+  const loc = useUserLocation();
   const rivals = useMemo(
     () => [
       users.find((u) => u.username === "ikejautd")!,
@@ -36,13 +38,13 @@ export default function VenueEngineSection() {
   const [venueOption, setVenueOption] = useState<"midpoint" | "preferred" | "host">("midpoint");
   const [selectedVenueId, setSelectedVenueId] = useState<string>("v1");
 
-  const midLat = (me.lat + rival.lat) / 2;
-  const midLng = (me.lng + rival.lng) / 2;
+  const midLat = (loc.lat + rival.lat) / 2;
+  const midLng = (loc.lng + rival.lng) / 2;
 
   const rankedVenues = useMemo(() => {
     return venues
       .map((v) => {
-        const dMe = haversineKm(me.lat, me.lng, v.lat, v.lng);
+        const dMe = haversineKm(loc.lat, loc.lng, v.lat, v.lng);
         const dThem = haversineKm(rival.lat, rival.lng, v.lat, v.lng);
         const dMid = haversineKm(midLat, midLng, v.lat, v.lng);
         const fairnessScore = Math.max(0, 100 - Math.round(Math.abs(dMe - dThem) * 6 + dMid * 4));
@@ -50,7 +52,7 @@ export default function VenueEngineSection() {
       })
       .sort((a, b) => a.dMid - b.dMid)
       .slice(0, 4);
-  }, [rival, midLat, midLng]);
+  }, [loc.lat, loc.lng, rival, midLat, midLng]);
 
   const activeVenue = rankedVenues.find((v) => v.id === selectedVenueId) ?? rankedVenues[0]!;
 
@@ -137,7 +139,7 @@ export default function VenueEngineSection() {
 
             <div className={styles.block}>
               <span className={styles.blockLabel}>
-                3. Recommended venues between {me.area} &amp; {rival.area}
+                3. Recommended venues between {loc.area} &amp; {rival.area}
               </span>
               <div className={styles.venueStack}>
                 {rankedVenues.map((v, i) => {
@@ -167,7 +169,7 @@ export default function VenueEngineSection() {
                       </div>
                       <div className={styles.distanceSplit}>
                         <span>
-                          You ({me.area}): <strong>{v.dMe.toFixed(1)} km</strong>
+                          You ({loc.area}): <strong>{v.dMe.toFixed(1)} km</strong>
                         </span>
                         <span>•</span>
                         <span>
@@ -275,10 +277,10 @@ export default function VenueEngineSection() {
 
               {/* Floating Pin Labels */}
               <div className={`${styles.pinCard} ${styles.pinMe}`}>
-                <span className={styles.pinTag}>Party A · You</span>
+                <span className={styles.pinTag}>Party A · You (GPS)</span>
                 <strong>{me.name}</strong>
                 <span>
-                  {me.area} · {activeVenue.dMe.toFixed(1)} km
+                  {loc.area} · {activeVenue.dMe.toFixed(1)} km
                 </span>
               </div>
 

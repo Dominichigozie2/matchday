@@ -3,7 +3,82 @@
 }
 
 .topSpacer {
-  height: var(--nav-h);
+  height: calc(var(--nav-h) + 24px);
+}
+
+.flowBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  flex-wrap: wrap;
+}
+
+.flowTabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.flowTab {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.flowTabOn {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+}
+
+.flowRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.locBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.locBadge svg {
+  color: var(--primary);
+}
+
+.gpsMini {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .directorySection {
@@ -112,10 +187,12 @@
   display: block;
   color: var(--muted);
   font-size: 11px;
+  white-space: nowrap;
 }
 
 .statsBar strong {
   font-size: 13.5px;
+  white-space: nowrap;
 }
 
 .sportTags {
@@ -134,6 +211,7 @@
   font-size: 12px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 @media (max-width: 560px) {

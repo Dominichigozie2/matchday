@@ -82,10 +82,17 @@ export default function CategoryShowroom() {
               Every outdoor game, <span className="hl">tuned to its rules.</span>
             </h2>
           </div>
-          <p className="section-sub">
-            From five-a-side turf battles and 4×100m relays to high-stakes Ludo under the shade — each sport unlocks its
-            own custom match sheet, equipment checklist, and venue finder.
-          </p>
+          <div className={styles.headRight}>
+            <p className="section-sub">
+              From five-a-side turf battles and 4×100m relays to high-stakes Ludo under the shade — each sport unlocks its
+              own custom match sheet, equipment checklist, and venue finder.
+            </p>
+            <div className={styles.headCtaRow}>
+              <Button href="/games" variant="primary" size="sm" iconRight={<ArrowUpRight size={16} />}>
+                Open Full Games Page
+              </Button>
+            </div>
+          </div>
         </div>
 
         {/* Filter bar + slider arrows */}
@@ -239,6 +246,9 @@ export default function CategoryShowroom() {
               </Button>
               <Button href={`/categories/${activeCategory.slug}`} variant="outline" size="sm">
                 View {activeCategory.name} hub
+              </Button>
+              <Button href="/games" variant="ghost" size="sm" iconRight={<ArrowUpRight size={15} />}>
+                All games page
               </Button>
             </div>
           </div>

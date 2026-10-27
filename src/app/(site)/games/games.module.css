@@ -1,0 +1,1113 @@
+.page {
+  padding-top: calc(var(--nav-h) + 32px);
+  padding-bottom: var(--space-10);
+  min-height: 100vh;
+}
+
+.topHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 60px);
+  margin-top: 10px;
+}
+
+.sub {
+  color: var(--ink-2);
+  font-size: clamp(15px, 1.9vw, 17px);
+  max-width: 60ch;
+  margin-top: 10px;
+}
+
+/* Live Location Detection Card */
+.locationCard {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+}
+
+.locTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.locDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+  flex-shrink: 0;
+}
+
+.locEyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.locName {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.detectBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.detectBtn:hover {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.locSwitchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.locSwitchRow select {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Process-by-Process Stepper Bar */
+.stepperBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 28px;
+}
+
+.stepPill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-align: left;
+  transition: all 0.2s var(--ease-out);
+  background: transparent;
+}
+
+.stepPill:hover {
+  background: var(--surface-2);
+}
+
+.stepNumBadge {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 99px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stepText strong {
+  font-size: 14.5px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stepText span {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stepCurrent {
+  background: var(--inverse) !important;
+}
+
+.stepCurrent .stepNumBadge {
+  background: var(--volt);
+  color: var(--volt-ink);
+}
+
+.stepCurrent .stepText strong {
+  color: var(--inverse-ink);
+}
+
+.stepCurrent .stepText span {
+  color: var(--inverse-muted);
+}
+
+.stepDone .stepNumBadge {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+/* Stage wrapper */
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Search & Category Filter Panel */
+.filterPanel {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchBarRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.searchInputWrap {
+  flex: 1 1 420px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding-inline: 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--line-strong);
+}
+
+.searchInputWrap:focus-within {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.searchIcon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.searchInputWrap input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  min-width: 0;
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 99px;
+  background: var(--surface-2);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.quickSearchTags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.tagChip {
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.tagChip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.tagChipOn {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.categoryTabsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 4px;
+}
+
+.catTab {
+  height: 40px;
+  padding-inline: 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.catTab:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.catTabActive {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-color: var(--inverse);
+}
+
+.subFilterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.segGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.segIcon {
+  margin-inline: 8px 4px;
+  color: var(--muted);
+}
+
+.sortLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding-inline: 8px 4px;
+  white-space: nowrap;
+}
+
+.segBtn {
+  height: 32px;
+  padding-inline: 12px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.segBtnOn {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Games Grid */
+.gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 22px;
+}
+
+.gameCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.gameCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md), inset 0 0 0 1.5px var(--tint, var(--primary));
+}
+
+.gameCardSelected {
+  box-shadow: var(--shadow-md), inset 0 0 0 2px var(--tint, var(--primary));
+}
+
+.media {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: var(--inverse);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.gameCard:hover .img {
+  transform: scale(1.05);
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 27, 30, 0.36) 0%, rgba(13, 27, 30, 0.1) 45%, rgba(13, 27, 30, 0.88) 100%);
+}
+
+.cardTop {
+  position: absolute;
+  top: 14px;
+  inset-inline: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.index {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(13, 27, 30, 0.58);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.modeBadges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.modeChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.mediaBottom {
+  position: absolute;
+  bottom: 16px;
+  inset-inline: 18px;
+  color: #fff;
+}
+
+.sportChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--tint, var(--primary));
+  color: #fff;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.cardTitle {
+  font-size: 24px;
+  color: #fff;
+}
+
+.cardTagline {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.84);
+  margin-top: 3px;
+}
+
+.cardBody {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.cardDesc {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-block: 10px;
+  border-block: 1px solid var(--line);
+}
+
+.statNum {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.statLabel {
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.surfaceRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.surfacePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.cardActions {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectGameBtn {
+  flex: 1;
+  height: 44px;
+  padding-inline: 16px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.selectGameBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.hubLink {
+  height: 44px;
+  padding-inline: 14px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.hubLink:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* =========================================================
+   Step 2: Configure Sport Rules
+   ========================================================= */
+.step2Card {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.step2Head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.step2SportInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.step2Icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--tint, var(--primary));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.step2SportInfo h2 {
+  font-size: clamp(24px, 3.5vw, 34px);
+  margin-top: 8px;
+}
+
+.step2SportInfo p {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.switchGameWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.switchGameWrap label {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.switchGameWrap select {
+  height: 42px;
+  padding-inline: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.modeCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.modeChoiceCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.modeChoiceCard:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.modeChoiceCard strong {
+  display: block;
+  font-size: 15.5px;
+}
+
+.modeChoiceCard span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.modeChoiceActive {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 14px;
+}
+
+.ruleControlCard {
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ruleControlHead strong {
+  display: block;
+  font-size: 14.5px;
+}
+
+.ruleControlHead span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.optRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.optBtn {
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.optBtnOn {
+  background: var(--inverse);
+  color: var(--volt);
+  border-color: var(--inverse);
+}
+
+.numStepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  align-self: flex-start;
+}
+
+.numStepper button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.toggleDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--subtle);
+}
+
+.toggleBtnOn {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.toggleBtnOn .toggleDot {
+  background: var(--primary);
+}
+
+.stepFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.stepFooterRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   Step 3: Matches & Venues Near Location
+   ========================================================= */
+.configuredBanner {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  border-radius: var(--radius-xl);
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-md);
+}
+
+.configuredLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.configuredIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--tint, var(--primary));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.configuredBadges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.configuredLeft h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  color: #fff;
+}
+
+.configuredRulesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.configuredChip {
+  font-size: 12.5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--inverse-2);
+  color: var(--inverse-muted);
+  white-space: nowrap;
+}
+
+.configuredChip strong {
+  color: var(--volt);
+}
+
+.configuredActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.step3Block {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step3Head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.step3Head h3 {
+  font-size: clamp(20px, 2.6vw, 26px);
+  margin-top: 4px;
+}
+
+.step3SearchRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.miniSearch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding-inline: 14px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  min-width: 280px;
+}
+
+.miniSearch input {
+  border: 0;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 600;
+  outline: none;
+  width: 100%;
+}
+
+.reqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 18px;
+}
+
+.venueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr));
+  gap: 16px;
+}
+
+.venueCard {
+  background: var(--bg);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.venueTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.venueLoc {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #a86b00;
+  white-space: nowrap;
+}
+
+.distanceRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.closestTag {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.amenities span {
+  font-size: 11.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.venueFoot {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.venueFoot a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.emptyBox {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  border: 1px dashed var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.emptyBox p {
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+@media (max-width: 860px) {
+  .stepperBar {
+    grid-template-columns: 1fr;
+  }
+  .modeCards {
+    grid-template-columns: 1fr;
+  }
+  .step2Card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .locationCard {
+    width: 100%;
+  }
+  .miniSearch {
+    min-width: 100%;
+  }
+}

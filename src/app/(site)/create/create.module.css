@@ -3,9 +3,113 @@
   padding-bottom: var(--space-10);
 }
 
+.topRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
 .header {
-  max-width: 700px;
-  margin-bottom: 32px;
+  max-width: 640px;
+}
+
+.wizardBar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-xs);
+  flex-wrap: wrap;
+}
+
+.wizStep {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.wizBadge {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 99px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.wizCurrent {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+}
+
+.wizCurrent .wizBadge {
+  background: var(--volt);
+  color: var(--volt-ink);
+}
+
+.wizDone {
+  color: var(--primary);
+}
+
+.wizDone .wizBadge {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.stepNavFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.locDetectBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--primary-soft);
+  border: 1px solid var(--primary);
+  flex-wrap: wrap;
+}
+
+.locDetectBanner strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+}
+
+.gpsInlineBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .title {
@@ -93,11 +197,13 @@
 .catCard strong {
   display: block;
   font-size: 13.5px;
+  white-space: nowrap;
 }
 
 .catCard span {
   font-size: 11.5px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .catIcon {
@@ -162,6 +268,7 @@
   justify-content: center;
   gap: 7px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .segBtn:disabled {
@@ -209,6 +316,7 @@
   border-radius: 99px;
   background: var(--surface);
   border: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .resolvedPreview {
@@ -266,6 +374,7 @@
   border: 1.5px solid var(--line);
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .optBtnOn {
@@ -303,6 +412,7 @@
   border: 1.5px solid var(--line);
   font-size: 13.5px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .toggleThumb {

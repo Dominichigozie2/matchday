@@ -3,6 +3,20 @@
   overflow: hidden;
 }
 
+.headRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.headCtaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .toolbar {
   display: flex;
   align-items: center;
@@ -159,12 +173,13 @@
   background: rgba(13, 27, 30, 0.55);
   color: #fff;
   backdrop-filter: blur(8px);
+  white-space: nowrap;
 }
 
 .modeBadges {
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
@@ -179,6 +194,7 @@
   background: rgba(255, 255, 255, 0.88);
   color: var(--ink);
   backdrop-filter: blur(8px);
+  white-space: nowrap;
 }
 
 .mediaBottom {
@@ -199,6 +215,7 @@
   background: var(--tint, var(--primary));
   color: #fff;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .cardTitle {
@@ -234,11 +251,13 @@
   font-size: 18px;
   font-weight: 800;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 .statLabel {
   font-size: 11.5px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .ruleChips {
@@ -253,6 +272,7 @@
   border-radius: 8px;
   background: var(--surface-2);
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .ruleChip strong {
@@ -275,6 +295,7 @@
   font-size: 13.5px;
   font-weight: 700;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 .exploreLink:hover {
@@ -350,6 +371,7 @@
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .venuePill {
@@ -359,6 +381,7 @@
   border-radius: var(--radius-pill);
   background: var(--surface-2);
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .inspectorCtas {
@@ -405,6 +428,7 @@
   background: var(--surface);
   color: var(--ink-2);
   border: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .optActive {

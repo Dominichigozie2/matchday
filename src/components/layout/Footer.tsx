@@ -20,6 +20,9 @@ export default function Footer() {
             <div>
               <h4>Games</h4>
               <ul>
+                <li>
+                  <Link href="/games">All games directory</Link>
+                </li>
                 {categories.slice(0, 6).map((c) => (
                   <li key={c.slug}>
                     <Link href={`/categories/${c.slug}`}>{c.name}</Link>

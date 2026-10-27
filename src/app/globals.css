@@ -217,6 +217,7 @@ ol {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .eyebrow::before {
@@ -241,8 +242,8 @@ ol {
 }
 
 .section-title {
-  font-size: clamp(28px, 4.4vw, 56px);
-  max-width: 16ch;
+  font-size: clamp(28px, 3.8vw, 48px);
+  max-width: 22ch;
   margin-top: 14px;
 }
 

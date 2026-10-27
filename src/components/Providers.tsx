@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { ToastProvider } from "@/components/ui/Toast";
+import { LocationProvider } from "@/lib/location";
 
 /* ---------------------------------------------------------
    Theme context. v0.1 ships light only; the toggle UI will
@@ -23,7 +24,9 @@ export default function Providers({ children }: { children: ReactNode }) {
 
   return (
     <ThemeCtx.Provider value={{ theme, setTheme }}>
-      <ToastProvider>{children}</ToastProvider>
+      <LocationProvider>
+        <ToastProvider>{children}</ToastProvider>
+      </LocationProvider>
     </ThemeCtx.Provider>
   );
 }

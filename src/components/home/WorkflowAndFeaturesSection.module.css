@@ -4,7 +4,7 @@
 
 .stepsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -128,12 +128,14 @@
   font-size: 12.5px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .inviteStatus {
   font-size: 12px;
   font-weight: 800;
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .inviteBar {
@@ -170,6 +172,7 @@
   font-size: 12.5px;
   font-weight: 700;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .rosterMini {
@@ -195,11 +198,13 @@
   border-radius: 6px;
   background: var(--primary-soft);
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .roleTag {
   color: var(--muted);
   font-size: 12.5px;
+  white-space: nowrap;
 }
 
 .okPill {
@@ -210,6 +215,7 @@
   border-radius: 99px;
   background: var(--success-soft);
   color: var(--success);
+  white-space: nowrap;
 }
 
 /* Stake calculator */
@@ -249,6 +255,7 @@
   font-size: 13px;
   font-weight: 700;
   border: 1px solid var(--inverse-line);
+  white-space: nowrap;
 }
 
 .stakeOptOn {
@@ -272,6 +279,7 @@
   gap: 4px;
   font-size: 11.5px;
   color: var(--inverse-muted);
+  white-space: nowrap;
 }
 
 .potBreakdown strong {
@@ -279,6 +287,7 @@
   font-family: var(--font-display);
   font-size: 18px;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
 .totalPot strong {

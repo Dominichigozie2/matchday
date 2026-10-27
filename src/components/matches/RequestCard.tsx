@@ -4,6 +4,7 @@ import { MapPin, Calendar, Clock, ShieldCheck, Users, UserCheck, Flame, BadgeChe
 import { getCategory } from "@/data/categories";
 import { getUser } from "@/data/users";
 import { formatNaira, type MatchRequest } from "@/data/requests";
+import { useUserLocation } from "@/lib/location";
 import Avatar from "@/components/ui/Avatar";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
@@ -19,6 +20,8 @@ export default function RequestCard({
 }) {
   const cat = getCategory(req.category);
   const host = getUser(req.by);
+  const loc = useUserLocation();
+  const liveDistKm = loc.distanceFromMeKm(host.lat, host.lng);
 
   return (
     <article
@@ -88,7 +91,7 @@ export default function RequestCard({
         <div className={styles.logItem}>
           <MapPin size={15} />
           <span>
-            <strong>{req.venue}</strong> ({req.area} · {req.distanceKm} km)
+            <strong>{req.venue}</strong> ({req.area} · {liveDistKm} km from {loc.area})
           </span>
         </div>
       </div>

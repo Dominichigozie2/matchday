@@ -36,25 +36,30 @@
 
 .kpis {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .kpiCard {
   background: var(--surface);
   border-radius: var(--radius-md);
-  padding: 18px;
+  padding: 20px 22px;
   border: 1px solid var(--line);
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.kpiCard > div {
+  flex: 1;
   min-width: 0;
 }
 
 .kpiIcon,
 .kpiIconVolt {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   display: grid;
   place-items: center;
@@ -72,27 +77,32 @@
 }
 
 .kpiCard span {
+  display: block;
   font-size: 12.5px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .kpiCard strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 22px;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
 .kpiCard small {
   display: block;
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--ink-2);
   margin-top: 4px;
+  white-space: nowrap;
 }
 
 .kpiCard small a {
   color: var(--primary);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .twoCol {
@@ -145,6 +155,7 @@
   font-size: 12.5px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .tabOn {
@@ -230,6 +241,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  white-space: nowrap;
 }
 
 .reqBtns {
@@ -247,6 +259,7 @@
   border-radius: 99px;
   font-size: 12.5px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .declineBtn {
@@ -266,6 +279,7 @@
   font-size: 13.5px;
   font-weight: 700;
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .mergedList {
@@ -352,13 +366,21 @@
 .mergedLast small {
   font-size: 11.5px;
   color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1080px) {
   .kpis {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .kpis {
     grid-template-columns: 1fr;
   }
 }

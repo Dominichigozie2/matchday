@@ -55,11 +55,13 @@
 .rivalBtn strong {
   display: block;
   font-size: 13.5px;
+  white-space: nowrap;
 }
 
 .rivalBtn span {
   font-size: 12px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .rivalActive {
@@ -88,11 +90,13 @@
 .modeTab strong {
   display: block;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .modeTab span {
   font-size: 11.5px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .modeTabOn {
@@ -178,6 +182,7 @@
   background: var(--volt);
   color: var(--volt-ink);
   font-weight: 800;
+  white-space: nowrap;
 }
 
 /* Right map stage */
@@ -239,14 +244,17 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  white-space: nowrap;
 }
 
 .pinCard strong {
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .pinCard span {
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .pinMe {
@@ -314,6 +322,7 @@
   color: #a86b00;
   font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .amenity {
@@ -323,6 +332,7 @@
   font-size: 12.5px;
   font-weight: 600;
   color: var(--ink-2);
+  white-space: nowrap;
 }
 
 .splitHint {

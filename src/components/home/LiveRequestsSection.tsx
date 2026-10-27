@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Search,
   AtSign,
@@ -33,6 +33,15 @@ export default function LiveRequestsSection({ fullPage = false }: { fullPage?: b
   const [directQuery, setDirectQuery] = useState("");
   const [selectedReq, setSelectedReq] = useState<MatchRequest | null>(null);
   const [directTarget, setDirectTarget] = useState<User | null>(null);
+
+  useEffect(() => {
+    if (!fullPage || typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const c = params.get("category");
+    if (c && categories.some((item) => item.slug === c)) {
+      setCatFilter(c);
+    }
+  }, [fullPage]);
 
   const matchedDirectUser = useMemo(() => {
     if (!directQuery.trim()) return null;

@@ -99,11 +99,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 11px 14px;
+  padding: 11px 12px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--ink-2);
+  white-space: nowrap;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -125,6 +126,8 @@
   border-radius: 99px;
   background: var(--volt);
   color: var(--volt-ink);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .sideFoot {
@@ -185,17 +188,19 @@
   border-radius: 8px;
   background: var(--primary-soft);
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .areaBadge {
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .content {
   padding: 28px;
-  max-width: 1220px;
+  max-width: 1560px;
   width: 100%;
 }
 

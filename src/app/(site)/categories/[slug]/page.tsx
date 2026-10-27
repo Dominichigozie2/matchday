@@ -25,8 +25,8 @@ export default function CategoryDetailPage({ params }: { params: Promise<{ slug:
   return (
     <div className={styles.page} style={{ "--tint": category.tint } as React.CSSProperties}>
       <div className="container">
-        <Link href="/#categories" className={styles.backLink}>
-          <ArrowLeft size={16} /> Back to all categories
+        <Link href="/games" className={styles.backLink}>
+          <ArrowLeft size={16} /> Back to all games
         </Link>
 
         {/* Hero banner */}

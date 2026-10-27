@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Users, UserCheck, Sparkles } from "lucide-react";
+import { Users, UserCheck, Sparkles, LocateFixed } from "lucide-react";
+import { useUserLocation } from "@/lib/location";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { useToast } from "@/components/ui/Toast";
@@ -12,13 +13,19 @@ import styles from "../auth.module.css";
 export default function SignupPage() {
   const router = useRouter();
   const toast = useToast();
+  const loc = useUserLocation();
   const [accountType, setAccountType] = useState<"individual" | "group">("group");
   const [name, setName] = useState("Surulere Titans");
   const [username, setUsername] = useState("suruleretitans");
-  const [area, setArea] = useState("Surulere, Lagos");
+  const [area, setArea] = useState(loc.label);
+
+  useEffect(() => {
+    setArea(loc.label);
+  }, [loc.label]);
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
+    loc.setManualArea(area);
     toast({
       title: `${accountType === "group" ? "Group" : "Individual"} account created!`,
       description:
@@ -80,7 +87,25 @@ export default function SignupPage() {
                 <input id="s-user" value={username} onChange={(e) => setUsername(e.target.value)} required />
               </div>
               <div className={styles.field}>
-                <label htmlFor="s-area">Home Location (for midpoint venues)</label>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                  <label htmlFor="s-area" style={{ marginBottom: 0 }}>
+                    Home Location (GPS)
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => void loc.detectLocation()}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 4,
+                      fontSize: 11.5,
+                      fontWeight: 700,
+                      color: "var(--primary)",
+                    }}
+                  >
+                    <LocateFixed size={12} /> Detect
+                  </button>
+                </div>
                 <input id="s-area" value={area} onChange={(e) => setArea(e.target.value)} required />
               </div>
             </div>

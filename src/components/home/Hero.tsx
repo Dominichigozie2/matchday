@@ -1,11 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { MapPin, Search, ShieldCheck, Navigation, Star, ArrowRight } from "lucide-react";
+import { MapPin, Search, ShieldCheck, Navigation, Star, ArrowRight, LocateFixed } from "lucide-react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { categories } from "@/data/categories";
+import { useUserLocation } from "@/lib/location";
 import Avatar from "@/components/ui/Avatar";
 import SportIcon from "@/components/ui/SportIcon";
 import styles from "./Hero.module.css";
@@ -13,8 +15,13 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
   const router = useRouter();
+  const loc = useUserLocation();
   const [cat, setCat] = useState("football");
   const [where, setWhere] = useState("Yaba, Lagos");
+
+  useEffect(() => {
+    setWhere(loc.label);
+  }, [loc.label]);
 
   useGSAP(
     () => {
@@ -111,14 +118,43 @@ export default function Hero() {
               </span>
               <span className={styles.fieldBody}>
                 <span className={styles.fieldLabel}>Near</span>
-                <input value={where} onChange={(e) => setWhere(e.target.value)} aria-label="Location" />
+                <input
+                  value={where}
+                  onChange={(e) => {
+                    setWhere(e.target.value);
+                    loc.setManualArea(e.target.value);
+                  }}
+                  aria-label="Location"
+                />
               </span>
+              <button
+                type="button"
+                className={styles.gpsBtn}
+                onClick={(e) => {
+                  e.preventDefault();
+                  void loc.detectLocation();
+                }}
+                title="Detect my current GPS location"
+                aria-label="Detect my current GPS location"
+              >
+                <LocateFixed size={15} />
+              </button>
             </label>
             <button type="submit" className={styles.go}>
               <Search size={18} />
               <span>Find matches</span>
             </button>
           </form>
+
+          <div className={styles.gamesCtaRow} data-h="fade">
+            <Link href="/games" className={styles.gamesCtaBtn}>
+              <span>Explore All Games &amp; Categories</span>
+              <ArrowRight size={16} />
+            </Link>
+            <span className={styles.gamesCtaHint}>
+              Search &amp; filter all 9 outdoor sports step by step
+            </span>
+          </div>
 
           <div className={styles.proof} data-h="fade">
             <div className={styles.stack}>

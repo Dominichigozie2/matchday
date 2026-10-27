@@ -42,6 +42,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 .directCopy h3 {
@@ -78,6 +79,7 @@
   font-size: 12px;
   font-weight: 600;
   border: 1px solid var(--inverse-line);
+  white-space: nowrap;
   transition: border-color 0.2s, background 0.2s;
 }
 
