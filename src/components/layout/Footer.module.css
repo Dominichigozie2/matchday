@@ -48,7 +48,7 @@
 .giant {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(80px, 19vw, 280px);
+  font-size: clamp(54px, 18.5vw, 280px);
   letter-spacing: -0.07em;
   line-height: 0.8;
   margin-top: var(--space-8);
@@ -79,11 +79,32 @@
 @media (max-width: 900px) {
   .top {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 56px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
   .cols {
     grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .giant {
+    margin-top: 40px;
+  }
+  .bottom {
+    flex-direction: column;
+    gap: 10px;
+    padding-block: 22px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cols {
+    grid-template-columns: 1fr;
   }
 }

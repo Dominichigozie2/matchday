@@ -1,12 +1,14 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: var(--ink);
+  flex-shrink: 0;
 }
 
 .mark {
   transition: transform 0.5s var(--ease-spring);
+  flex-shrink: 0;
 }
 .logo:hover .mark {
   transform: rotate(-12deg) scale(1.06);
@@ -15,8 +17,9 @@
 .word {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 22px;
+  font-size: clamp(19px, 3vw, 22px);
   letter-spacing: -0.04em;
+  white-space: nowrap;
 }
 
 .dot {

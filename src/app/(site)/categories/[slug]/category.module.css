@@ -239,6 +239,12 @@
 }
 
 @media (max-width: 560px) {
+  .heroCard {
+    padding: 18px;
+  }
+  .statsRow {
+    gap: 10px;
+  }
   .actions > * {
     flex: 1 1 100%;
   }

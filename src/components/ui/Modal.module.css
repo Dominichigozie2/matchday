@@ -18,8 +18,10 @@
 .panel {
   position: relative;
   width: 100%;
-  max-height: calc(100vh - 40px);
-  overflow: auto;
+  max-height: calc(100dvh - 40px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: var(--surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -30,17 +32,22 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding: 28px 28px 0;
+  padding: 24px 28px 0;
+  flex-shrink: 0;
+}
+
+.head > div {
+  min-width: 0;
 }
 
 .title {
-  font-size: 24px;
+  font-size: clamp(20px, 3vw, 24px);
 }
 
 .subtitle {
   color: var(--muted);
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .close {
@@ -60,15 +67,20 @@
 }
 
 .body {
-  padding: 24px 28px;
+  padding: 20px 28px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .foot {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
-  padding: 18px 28px 26px;
+  padding: 16px 28px 22px;
   border-top: 1px solid var(--line);
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 560px) {
@@ -78,11 +90,13 @@
   }
   .panel {
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    max-height: 90dvh;
+    max-height: 92dvh;
   }
-  .head,
+  .head {
+    padding: 20px 18px 0;
+  }
   .body {
-    padding-inline: 18px;
+    padding: 16px 18px;
   }
   .foot {
     padding: 14px 18px max(18px, env(safe-area-inset-bottom));

@@ -342,17 +342,19 @@ export default function TeamRosterAndInvitePage() {
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <td data-label="Matchday ID">
                     <code className={styles.idCode}>{p.id}</code>
                   </td>
-                  <td>
-                    <strong>{p.sport}</strong>
-                    <span className={styles.subCell}>{p.position}</span>
+                  <td data-label="Sport & Role">
+                    <div className={styles.roleCell}>
+                      <strong>{p.sport}</strong>
+                      <span className={styles.subCell}>{p.position}</span>
+                    </div>
                   </td>
-                  <td>
+                  <td data-label="Onboarding">
                     <Badge tone={p.source === "Invite link" ? "info" : "neutral"}>{p.source}</Badge>
                   </td>
-                  <td>
+                  <td data-label="Status">
                     {p.status === "Verified" ? (
                       <Badge tone="primary" icon={<ShieldCheck size={12} />}>
                         Verified account

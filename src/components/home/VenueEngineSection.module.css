@@ -52,16 +52,26 @@
   min-width: 0;
 }
 
+.rivalBtn > div {
+  min-width: 0;
+  flex: 1;
+}
+
 .rivalBtn strong {
   display: block;
   font-size: 13.5px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rivalBtn span {
+  display: block;
   font-size: 12px;
   color: var(--muted);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rivalActive {
@@ -71,7 +81,7 @@
 
 .modeTabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -85,18 +95,20 @@
   background: var(--bg);
   border: 1.5px solid var(--line);
   text-align: left;
+  min-width: 0;
 }
 
 .modeTab strong {
   display: block;
   font-size: 13px;
-  white-space: nowrap;
+  line-height: 1.25;
 }
 
 .modeTab span {
+  display: block;
   font-size: 11.5px;
   color: var(--muted);
-  white-space: nowrap;
+  line-height: 1.3;
 }
 
 .modeTabOn {
@@ -258,20 +270,20 @@
 }
 
 .pinMe {
-  left: 24px;
-  bottom: 24px;
+  left: 18px;
+  top: 18px;
 }
 
 .pinVenue {
-  top: 22px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   border: 2px solid var(--primary);
 }
 
 .pinRival {
-  right: 24px;
-  top: 24px;
+  right: 18px;
+  top: 18px;
 }
 
 .pinTag,
@@ -345,19 +357,16 @@
   color: var(--ink);
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
   .layout {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .block,
   .mapStage {
     padding: 16px;
-  }
-  .rivalList {
-    grid-template-columns: 1fr 1fr;
   }
   .modeTabs {
     grid-template-columns: 1fr;
@@ -384,6 +393,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 6px;
+    white-space: normal;
     box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line);
   }
   .venueDetailBar > :last-child {
@@ -391,7 +401,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .rivalList {
     grid-template-columns: 1fr;
   }

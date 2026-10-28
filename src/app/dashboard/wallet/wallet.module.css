@@ -32,7 +32,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 16px;
 }
 
@@ -182,6 +182,11 @@
   background: var(--bg);
   border: 1px solid var(--line);
   flex-wrap: wrap;
+}
+
+.ledgerRow > div:first-child {
+  min-width: 0;
+  flex: 1;
 }
 
 .ledgerRow strong {

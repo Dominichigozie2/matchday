@@ -35,7 +35,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 300px;
+  min-width: min(300px, 100%);
+  max-width: 100%;
 }
 
 .locTop {
@@ -43,6 +44,7 @@
   align-items: center;
   gap: 10px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .locDot {
@@ -228,7 +230,8 @@
 }
 
 .searchInputWrap {
-  flex: 1 1 420px;
+  flex: 1 1 320px;
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -543,7 +546,6 @@
 .statLabel {
   font-size: 11.5px;
   color: var(--muted);
-  white-space: nowrap;
 }
 
 .surfaceRow {
@@ -562,7 +564,6 @@
   border-radius: 8px;
   background: var(--surface-2);
   color: var(--ink-2);
-  white-space: nowrap;
 }
 
 .cardActions {
@@ -571,6 +572,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .selectGameBtn {
@@ -916,7 +918,6 @@
   border-radius: 8px;
   background: var(--inverse-2);
   color: var(--inverse-muted);
-  white-space: nowrap;
 }
 
 .configuredChip strong {
@@ -1065,8 +1066,9 @@
   border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
   font-size: 13.5px;
-  white-space: nowrap;
 }
 
 .venueFoot a {
@@ -1103,11 +1105,91 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .locationCard {
+    width: 100%;
+    min-width: 0;
+  }
+  .filterPanel {
+    padding: 16px;
+  }
+  .categoryTabsRow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: -4px;
+    padding-inline: 4px;
+  }
+  .categoryTabsRow::-webkit-scrollbar {
+    display: none;
+  }
+  .subFilterRow .segGroup {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .subFilterRow .segGroup::-webkit-scrollbar {
+    display: none;
+  }
+  .subFilterRow .segBtn {
+    flex: 1;
+    text-align: center;
+  }
+  .step2SportInfo {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .switchGameWrap {
+    width: 100%;
+  }
+  .switchGameWrap select {
+    width: 100%;
+  }
+  .stepFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .stepFooter > * {
+    width: 100%;
+  }
+  .stepFooterRight {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .stepFooterRight > * {
+    width: 100%;
+  }
+  .configuredBanner {
+    padding: 20px 18px;
+    border-radius: var(--radius-lg);
+  }
+  .configuredLeft {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .configuredActions {
+    width: 100%;
+  }
+  .configuredActions > * {
+    flex: 1 1 100%;
+  }
+  .step3Block {
+    padding: 18px 16px;
+  }
+  .step3SearchRow {
     width: 100%;
   }
   .miniSearch {
-    min-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .step3SearchRow .segGroup {
+    width: 100%;
+  }
+  .step3SearchRow .segBtn {
+    flex: 1;
+    text-align: center;
   }
 }

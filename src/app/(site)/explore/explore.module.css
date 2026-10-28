@@ -175,7 +175,7 @@
 
 .statsBar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   padding: 10px 12px;
   border-radius: 12px;
@@ -183,16 +183,21 @@
   font-size: 12.5px;
 }
 
+.statsBar > div {
+  min-width: 0;
+}
+
 .statsBar span {
   display: block;
   color: var(--muted);
   font-size: 11px;
-  white-space: nowrap;
 }
 
 .statsBar strong {
-  font-size: 13.5px;
-  white-space: nowrap;
+  display: block;
+  font-size: 13px;
+  line-height: 1.25;
+  overflow-wrap: break-word;
 }
 
 .sportTags {
@@ -214,7 +219,29 @@
   white-space: nowrap;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 680px) {
+  .flowTabs {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    border-radius: 14px;
+  }
+  .flowTab {
+    border-radius: 10px;
+    text-align: center;
+    white-space: normal;
+  }
+  .flowRight {
+    width: 100%;
+  }
+  .locBadge {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    white-space: normal;
+  }
+  .flowRight > :last-child {
+    width: 100%;
+  }
   .dirFilters {
     width: 100%;
   }

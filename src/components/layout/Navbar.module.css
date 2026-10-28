@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .leftBrand {
@@ -26,12 +26,13 @@
   align-items: center;
   gap: 10px;
   min-width: 0;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .locWrap {
   position: relative;
-  flex-shrink: 0;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .locPill {
@@ -49,6 +50,7 @@
   box-shadow: var(--shadow-xs);
   transition: border-color 0.2s, background 0.2s;
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .locPill:hover {
@@ -215,7 +217,7 @@
   display: none;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1150px) {
   .links {
     display: none;
   }
@@ -265,7 +267,7 @@
     justify-content: space-between;
     padding: 12px 0;
     font-family: var(--font-display);
-    font-size: 22px;
+    font-size: clamp(19px, 4.5vw, 22px);
     font-weight: 700;
     letter-spacing: -0.02em;
     border-bottom: 1px solid var(--line);
@@ -314,10 +316,36 @@
   .createLabelShort {
     display: inline;
   }
+  .locPopover {
+    position: fixed;
+    top: calc(var(--nav-h) + 8px);
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+  .locText {
+    max-width: 96px;
+  }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   .quickGrid {
     grid-template-columns: 1fr;
+  }
+  .locPill {
+    padding: 0 9px;
+    font-size: 12px;
+  }
+  .locText {
+    max-width: 78px;
+  }
+}
+
+@media (max-width: 380px) {
+  .createQuick {
+    display: none !important;
+  }
+  .locText {
+    max-width: 105px;
   }
 }

@@ -148,7 +148,10 @@
   border-radius: 8px;
   background: var(--surface);
   border: 1px solid var(--line);
-  white-space: nowrap;
+}
+
+.chip svg {
+  flex-shrink: 0;
 }
 
 .dateRow {
@@ -242,7 +245,7 @@
 /* Direct Challenge Modal */
 .targetCard {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   padding: 14px 16px;
   border-radius: var(--radius-md);
@@ -252,6 +255,7 @@
 
 .targetInfo {
   flex: 1;
+  min-width: 0;
 }
 
 .targetNameRow {
@@ -378,6 +382,16 @@
 }
 
 @media (max-width: 560px) {
+  .modalStepper {
+    gap: 4px;
+    padding: 4px;
+  }
+  .mStepPill {
+    padding: 6px 4px;
+    font-size: 11px;
+    white-space: normal;
+    line-height: 1.2;
+  }
   .twoCol {
     grid-template-columns: 1fr;
   }
@@ -390,5 +404,12 @@
   }
   .segBtn {
     width: 100%;
+  }
+  .stakeHeader {
+    flex-wrap: wrap;
+  }
+  .stakePill {
+    flex: 1 1 100%;
+    text-align: left;
   }
 }

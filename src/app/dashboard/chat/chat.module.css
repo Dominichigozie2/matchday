@@ -530,6 +530,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .msgMe .bubble {
@@ -661,9 +663,9 @@
 }
 
 /* =========================================================
-   MOBILE & TABLET MASTER-DETAIL VIEW (<= 900px)
+   MOBILE & TABLET MASTER-DETAIL VIEW (<= 980px)
    ========================================================= */
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .wrap {
     grid-template-columns: 1fr;
     height: calc(100dvh - 156px);
@@ -729,6 +731,10 @@
 }
 
 @media (max-width: 480px) {
+  .filterPill {
+    padding-inline: 6px;
+    font-size: 11.5px;
+  }
   .sendBtn {
     width: 44px;
     padding-inline: 0;

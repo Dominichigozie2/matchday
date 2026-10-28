@@ -253,6 +253,7 @@
     font-size: 11px;
     font-weight: 700;
     color: var(--muted);
+    white-space: nowrap;
     transition: color 0.2s, background 0.2s;
   }
   .bottomTabActive {
@@ -274,8 +275,18 @@
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .areaBadge {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .idChipMobile {
+    display: none;
+  }
+  .bottomTab {
+    font-size: 10.5px;
+    padding: 6px 2px;
   }
 }

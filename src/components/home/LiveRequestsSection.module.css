@@ -45,6 +45,10 @@
   white-space: nowrap;
 }
 
+.directCopy {
+  min-width: 0;
+}
+
 .directCopy h3 {
   font-size: clamp(22px, 3vw, 26px);
   color: var(--inverse-ink);
@@ -363,14 +367,25 @@
   .segGroup {
     width: 100%;
   }
+  .segIcon {
+    display: none;
+  }
   .seg {
     flex: 1;
     text-align: center;
+    padding-inline: 8px;
+    font-size: 12px;
   }
   .foundUser {
     flex-wrap: wrap;
   }
+  .foundMeta {
+    min-width: calc(100% - 62px);
+  }
   .foundUser > :last-child {
+    width: 100%;
+  }
+  .headActions {
     width: 100%;
   }
   .headActions > * {

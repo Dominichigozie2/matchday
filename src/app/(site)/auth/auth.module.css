@@ -36,6 +36,12 @@
   border-radius: var(--radius-md);
   background: var(--primary-soft);
   border: 1px solid var(--primary);
+  flex-wrap: wrap;
+}
+
+.squadBanner > div {
+  min-width: 0;
+  flex: 1;
 }
 
 .squadBanner strong {
@@ -123,9 +129,19 @@
 
 @media (max-width: 520px) {
   .card {
-    padding: 24px 20px;
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+  .head h1 {
+    font-size: 26px;
   }
   .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .modeTabs {
     grid-template-columns: 1fr;
   }
 }
